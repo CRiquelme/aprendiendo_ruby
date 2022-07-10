@@ -1,0 +1,12 @@
+channels = ["CBS", "FOX", "NBC", "SYFY"]
+
+p channels.values_at(0)        # => ["CBS"]
+p channels.values_at(0, 2)     # => ["CBS", "NBC"]
+p channels.values_at(0..2)     # => ["CBS", "FOX", "NBC"]
+p channels.values_at(0...2)    # => ["CBS", "FOX"]
+p channels.values_at(1, -1)    # => ["FOX", "SYFY"]
+p channels.values_at(1..-1)    # => ["FOX", "NBC", "SYFY"]
+p channels.values_at(1..-2)    # => ["FOX", "NBC"]
+p channels.values_at(1...-1)   # => ["FOX", "NBC"]
+p channels.values_at(1...-2)   # => ["FOX"]
+p channels.values_at(3, 100)   # => ["SYFY", nil]
